@@ -164,13 +164,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+<<<<<<< HEAD
 # FastCharge
 $(call inherit-product, packages/apps/FastCharge/fastcharge.mk)
-
+=======
 # Enable whole-program R8 Java optimizations for SystemUI and system_server,
 # but also allow explicit overriding for testing and development.
 SYSTEM_OPTIMIZE_JAVA = true
 SYSTEMUI_OPTIMIZE_JAVA = true
+>>>>>>> 947dc33d (peridot: Enable R8 optimizations for system_server and SystemUI)
 
 # Fastbootd
 PRODUCT_PACKAGES += \
