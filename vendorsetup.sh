@@ -36,6 +36,19 @@ echo "Cloning KProfiles..."
 rm -rf packages/apps/KProfiles
 git clone -b lineage-23.0 https://github.com/sm8635-dev/packages_apps_KProfiles.git packages/apps/KProfiles
 
+# Compat (cherry pick)
+echo "Fetching QPR1 compat..."
+cd hardware/lineage/compat
+git fetch https://github.com/sm8635-dev/hardware_lineage_compat lineage-23.0
+git reset --hard FETCH_HEAD
+
+# Picking sepolicy for QPR1 (cherry pick)
+echo "Picking sepolicy fix..."
+cd ../../..
+cd device/qcom/sepolicy_vndr/sm8650
+git fetch https://github.com/sm8635-dev/device_qcom_sepolicy_vndr
+git cherry-pick 39cfd17977cc664fa8393b6569c39179f4127b2d 1d2c884133bb23d780fc35ecff27d2e6eeabe314 8e148a4417233704f40c223c0624d41f017b490e
+
 # Refresh signing keys
 if [ -d vendor/lineage-priv/keys ]; then
   echo "Removing existing signing keys..."
