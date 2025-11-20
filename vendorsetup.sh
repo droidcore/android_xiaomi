@@ -36,6 +36,11 @@ echo "Cloning KProfiles..."
 rm -rf packages/apps/KProfiles
 git clone -b lineage-23.0 https://github.com/sm8635-dev/packages_apps_KProfiles.git packages/apps/KProfiles
 
+# FastCharge (fresh clone)
+echo "Cloning FastCharge..."
+rm -rf packages/apps/FastCharge
+git clone -b lineage-23.0 https://github.com/sm8635-dev/packages_apps_FastCharge.git packages/apps/FastCharge
+
 # Compat (cherry pick)
 echo "Fetching QPR1 compat..."
 cd hardware/lineage/compat
