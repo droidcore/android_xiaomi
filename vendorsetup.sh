@@ -49,14 +49,6 @@ cd device/qcom/sepolicy_vndr/sm8650
 git fetch https://github.com/sm8635-dev/device_qcom_sepolicy_vndr
 git cherry-pick 39cfd17977cc664fa8393b6569c39179f4127b2d 1d2c884133bb23d780fc35ecff27d2e6eeabe314 8e148a4417233704f40c223c0624d41f017b490e
 
-# Refresh signing keys
-if [ -d vendor/lineage-priv/keys ]; then
-  echo "Removing existing signing keys..."
-  rm -rf vendor/lineage-priv/keys
-fi
-echo "Cloning fresh signing keys..."
-git clone https://github.com/Neon-Duchamp/keys.git -b old-keys vendor/lineage-priv/keys
-
 # Always back to root at the end
 if command -v croot &>/dev/null; then
   croot
